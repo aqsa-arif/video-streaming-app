@@ -56,7 +56,7 @@ const Comments = () => {
 
    const [message, setMessage] = useState('');
    const [posted, setPosted] = useState(false);
- 
+    
    useEffect(() => {
       const fetchComments = async () => {
          try {
@@ -77,7 +77,7 @@ const Comments = () => {
          }
       };
       fetchComments();
-   }, [posted]);
+   }, [posted, videoCurrent]);
 
    const PostComment = async () => {
       if(message.length){

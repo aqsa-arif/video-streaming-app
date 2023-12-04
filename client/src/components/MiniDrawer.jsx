@@ -314,12 +314,12 @@ export default function MiniDrawer({ open, setOpen, visible, setVisible, handleT
             </ListItem >
           </NavLink>
 
-          <NavLink to='/subscriptions'>
+          {/* <NavLink to='/subscriptions'>
           <ListItem className={`${!open ? 'minipadding' : 'maxpadding'} `}>
             <SubscriptionsOutlinedIcon className='menuicon' />
             Subscriptions
           </ListItem >
-          </NavLink>
+          </NavLink> */}
 
           {
             userCurrent  &&  <ListItem className={`${!open ? 'minipadding' : 'maxpadding'} `}

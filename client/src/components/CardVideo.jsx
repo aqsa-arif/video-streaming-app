@@ -120,7 +120,7 @@ const CardVideo = ({video, open, type }) => {
     },[video.userId]);
 
   return (
-    <VidLink to={`video/${video._id}`} >
+    <VidLink to={`/video/${video._id}`} >
         <VideoCard className={`${!open && type==="lg"  ? 'adjustSize' : ""} `} 
         type={type} >
         

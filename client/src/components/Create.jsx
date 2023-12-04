@@ -140,11 +140,14 @@ const Create = ({ dialogopen, handleClose }) => {
   }
 
   const uploadFile = (file, urlType ) => {
+    console.log(file, 'starting .....', urlType);
     const storage = getStorage(app);
     const filename = new Date().getTime() + file.name;
     const storageRef = ref(storage , filename );
     const uploadTask = uploadBytesResumable(storageRef, file);
 
+    console.log(file, 'starting .....', urlType);
+    
     uploadTask.on('state_changed',
   (snapshot) => {
     // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
@@ -177,6 +180,7 @@ const Create = ({ dialogopen, handleClose }) => {
 
 
 const handleUpload = async () => {   
+  console.log(inputs);
   try {
       const {data} = await axios({
           method: 'post',

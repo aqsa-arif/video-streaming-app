@@ -283,7 +283,7 @@ const Login = ({setOpen}) => {
 
              <InputBase  placeholder="Password"  
              name='password'
-              type='password' 
+              type='text' 
               autoComplete='off'
               onChange={getUserData}
               inputProps={{ sx:  {
@@ -350,7 +350,7 @@ const Login = ({setOpen}) => {
                 </InputBase>   
                 
                 <InputBase  placeholder="Password" autoComplete="off"
-                 type='password' 
+                 type='text' 
                  onChange={getUserData}
                 name='password'
                 inputProps={{ sx:  {

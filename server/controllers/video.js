@@ -22,7 +22,7 @@ const getVideo = async (req, res ) => {
 }
 
 
-const addVideo = async (req, res ) => {  
+const addVideo = async (req, res ) => {   
     try { 
         const validationErrors = validationResult(req);
        if (!validationErrors.isEmpty()) {
@@ -289,7 +289,6 @@ const addlikes = async (req, res ) => {
                 $pull: { dislikes:  req.user.userId }
              },  
          );   
-
         res.status(200).send({
             success: true,  
             message: 'You liked a video', 
@@ -302,9 +301,9 @@ const addlikes = async (req, res ) => {
        success: false,
        message,
     })
-
    }
 }
+
 const addDislikes = async (req, res ) => {     
     try {     
          await Video.findByIdAndUpdate(

@@ -378,13 +378,13 @@ const Video = ({ open }) => {
                             <Social>
                                 <SocialButton onClick={handleLike}>
                                     {
-                                        videoCurrent?.likes.length ?
+                                        videoCurrent?.likes?.length ?
                                             <>
                                                 {
                                                     videoCurrent?.likes?.includes(userCurrent?._id)
                                                         ? <ThumbUp /> : <ThumbUpOutlinedIcon />
                                                 }
-                                                {videoCurrent.likes.length}
+                                                {videoCurrent.likes?.length}
                                             </>
                                             :
                                             <> <ThumbUpOutlinedIcon /> Like </>
@@ -393,7 +393,7 @@ const Video = ({ open }) => {
 
                                 <SocialButton onClick={handleDislike}>
                                     {
-                                        videoCurrent?.dislikes.length ?
+                                        videoCurrent?.dislikes?.length ?
                                             <>
                                                 {
                                                     videoCurrent?.dislikes?.includes(userCurrent?._id)

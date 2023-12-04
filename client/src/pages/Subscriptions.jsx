@@ -40,15 +40,19 @@ const Subscription = ({open, type}) => {
                 }
 
             })
+            console.log(data);
          
             if(data.success){
                 setVideos(data.videos);  
             }else{ 
-                toast.error(data.message);
-                navigate('/');
+                toast.error(data.message); 
+                // navigate('/');
             }
+
             } catch (error) {
-                console.log("Something went wrong", error);
+                console.log("Something went wrong", error); 
+                toast.error("Please Login first.");
+                navigate('/');
             }
         }             
         fetchVideos();
