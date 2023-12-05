@@ -31,14 +31,15 @@ const Title = styled(Typography)`
 `
 
 const Recommendation = ({ open, tags, videoCurrent }) => {
-    const [videos, setVideos] = useState([]);
+    const [videos, setVideos] = useState([]); 
 
     useEffect(() => {
         const fetchRecommendations = async () => {
             try {
                 const {data} = await axios({
                     method: 'get',
-                    url: `${process.env.REACT_APP_SERVERURI}/api/videos/getByTag?tags=${tags}`,
+                    url: `${process.env.REACT_APP_SERVERURI}/api/videos/getByTag`,
+                    params: { tags: tags },
                 }); 
                 if(data.success){
                     const recommend = data.videos?.filter((video) => video._id !== videoCurrent._id);
@@ -55,7 +56,7 @@ const Recommendation = ({ open, tags, videoCurrent }) => {
             }
         }
         fetchRecommendations();
-    }, []);
+    }, [tags, videoCurrent]);
 
     return (
         <RecommendationMain >
